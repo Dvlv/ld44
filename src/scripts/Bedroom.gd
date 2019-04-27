@@ -4,23 +4,25 @@ signal finished_displaying
 onready var stories = {
 	0: "intro",
 	1: "out_of_money",
-	2: "eager"
 }
 
 onready var CS = $CanvasLayer/DialogueBox
 
 func _ready():
 	if not global.just_exited_time_mcn:
-		call(stories[global.story])
-	else:
-		if global.story == 1:
-			eager()
-		if global.score > global.HIGH_SCORE:
-			winning_scene()
+		if global.story in stories.keys():
+			call(stories[global.story])
+		elif global.score > global.HIGH_SCORE:
+			return winning_scene()
 		else:
-			# connect phone click to next lvl
-			# will be Level + str(story+1), or random lvl
+			return connect_callbacks()
+	else:
+		global.just_exited_time_mcn = false
+		if global.story == 1:
+			return eager()
+		else:
 			connect_callbacks()
+			return show_ticket_count()
 
 func load_time_machine():
 	get_tree().change_scene_to(load("res://scenes/TimeMachine.tscn"))
@@ -52,7 +54,8 @@ func out_of_money():
 func eager():
 	global.animated_scene([
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Wow, I can't believe that worked."]},
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Ooh, I have " + str(global.tickets) + " new tickets!"]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Ooh, I have " + ticket_string()]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "This rocks! I don't need money, my life is currency."]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Time to play!"]},
 		{"target": self, "method": "load_lvl_3", "args": []}
 	])
@@ -63,6 +66,13 @@ func load_lvl_3():
 
 func load_ss_home():
 	get_tree().change_scene_to(load("res://scenes/SSHome.tscn"))
+
+
+func show_ticket_count():
+	global.animated_scene([
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Man, time sure flies!"]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Ooh, I have " + ticket_string()]},
+	])
 
 
 func winning_scene():
@@ -96,6 +106,11 @@ func load_thanks_scene():
 	get_tree().change_scene_to(load("res://scenes/Thanks.tscn"))
 
 
+func ticket_string():
+	if global.tickets > 1:
+		return str(global.tickets) + " tickets now!"
+	else:
+		return str(global.tickets) + " ticket!"
 
 
 

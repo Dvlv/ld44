@@ -16,9 +16,10 @@ func play():
 		return get_tree().change_scene_to(load("res://scenes/Level1.tscn"))
 	if global.tickets > 0:
 		# play noise
-		var random_level = load("res://scenes/Level3.tscn")
+		var random_level = global.get_random_level()
+		var lvl_scene = load("res://scenes/" + random_level)
 
-		return get_tree().change_scene_to(random_level)
+		return get_tree().change_scene_to(lvl_scene)
 	else:
 		$Label.visible = true
 		#play noise

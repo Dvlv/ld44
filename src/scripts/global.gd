@@ -7,8 +7,24 @@ var HIGH_SCORE = 490
 
 var story = -1
 var just_exited_time_mcn = false
+var last_level = 0
 
 var frames = []
+
+
+
+func get_random_level():
+	randomize()
+	var levels = [4, 5, 6, 7, 8]
+	levels.shuffle()
+	var chosen_lvl = ""
+	if levels[0] == last_level:
+		chosen_lvl = levels[1]
+	else:
+		chosen_lvl = levels[0]
+
+	return "Level" + str(chosen_lvl) + ".tscn"
+
 
 func get_current_year():
 	return 2019 + years_skipped
