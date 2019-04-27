@@ -22,28 +22,15 @@ extents = Vector2( 52.286, 51.7646 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 52.286, 51.7646 )
 
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 52.286, 51.7646 )
-
-[sub_resource type="StreamTexture" id=11]
-flags = 4
-load_path = "res://.import/border.png-264d4a92a994072aad8f763cd6a974c3.stex"
-
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 52.286, 51.7646 )
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 52.286, 51.7646 )
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/border.png-264d4a92a994072aad8f763cd6a974c3.stex"
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 52.286, 51.7646 )
-
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 52.286, 51.7646 )
-
-[sub_resource type="StreamTexture" id=13]
-flags = 4
-load_path = "res://.import/border.png-264d4a92a994072aad8f763cd6a974c3.stex"
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 52.286, 51.7646 )
@@ -52,6 +39,19 @@ extents = Vector2( 52.286, 51.7646 )
 extents = Vector2( 52.286, 51.7646 )
 
 [sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 52.286, 51.7646 )
+
+[sub_resource type="StreamTexture" id=10]
+flags = 4
+load_path = "res://.import/border.png-264d4a92a994072aad8f763cd6a974c3.stex"
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 52.286, 51.7646 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 52.286, 51.7646 )
+
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 52.286, 51.7646 )
 
 [sub_resource type="RectangleShape2D" id=14]
@@ -112,11 +112,11 @@ position = Vector2( 675, 80 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="squares/row1/square4"]
-shape = SubResource( 10 )
+shape = SubResource( 4 )
 
 [node name="border" type="Sprite" parent="squares/row1/square4"]
 visible = false
-texture = SubResource( 11 )
+texture = SubResource( 5 )
 
 [node name="row2" type="Node2D" parent="squares"]
 position = Vector2( 0, 290 )
@@ -126,7 +126,7 @@ position = Vector2( 330, 80 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="squares/row2/square1"]
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="border" type="Sprite" parent="squares/row2/square1"]
 visible = false
@@ -137,7 +137,7 @@ position = Vector2( 445, 80 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="squares/row2/square2"]
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 
 [node name="border" type="Sprite" parent="squares/row2/square2"]
 visible = false
@@ -148,7 +148,7 @@ position = Vector2( 560, 80 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="squares/row2/square3"]
-shape = SubResource( 6 )
+shape = SubResource( 8 )
 
 [node name="border" type="Sprite" parent="squares/row2/square3"]
 visible = false
@@ -159,11 +159,11 @@ position = Vector2( 675, 80 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="squares/row2/square4"]
-shape = SubResource( 12 )
+shape = SubResource( 9 )
 
 [node name="border" type="Sprite" parent="squares/row2/square4"]
 visible = false
-texture = SubResource( 13 )
+texture = SubResource( 10 )
 
 [node name="row3" type="Node2D" parent="squares"]
 position = Vector2( 0, 440 )
@@ -173,7 +173,7 @@ position = Vector2( 330, 80 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="squares/row3/square1"]
-shape = SubResource( 7 )
+shape = SubResource( 11 )
 
 [node name="border" type="Sprite" parent="squares/row3/square1"]
 visible = false
@@ -184,7 +184,7 @@ position = Vector2( 445, 80 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="squares/row3/square2"]
-shape = SubResource( 8 )
+shape = SubResource( 12 )
 
 [node name="border" type="Sprite" parent="squares/row3/square2"]
 visible = false
@@ -195,7 +195,7 @@ position = Vector2( 560, 80 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="squares/row3/square3"]
-shape = SubResource( 9 )
+shape = SubResource( 13 )
 
 [node name="border" type="Sprite" parent="squares/row3/square3"]
 visible = false
@@ -247,4 +247,8 @@ stream = ExtResource( 11 )
 
 [node name="fail" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
 

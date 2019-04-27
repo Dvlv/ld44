@@ -55,7 +55,7 @@ margin_left = -73.4802
 margin_top = -75.8128
 margin_right = 84.5198
 margin_bottom = -61.8128
-text = "Play some Sweet Smash!"
+text = "Play some Sweet Squish!"
 
 [node name="door" type="Area2D" parent="bg"]
 position = Vector2( -411.722, 3.49905 )

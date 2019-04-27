@@ -12,6 +12,7 @@ var match_rows = null
 func connect_win():
 	$WinScreen/Ok.connect("pressed", self, "on_win_pressed")
 	$GiveUp.connect("pressed", self, "back_to_home")
+	$Timer.connect("timeout", self, "show_win")
 
 	$bgm.play()
 
@@ -60,10 +61,7 @@ func swap_sweets(sq1, sq2):
 		disconnect_second_clicks()
 		connect_first_clicks()
 	else:
-		$WinScreen.visible = true
-		$GiveUp.visible = false
-		$bgm.stop()
-		$victory.play()
+		$Timer.start()
 
 
 func check_for_matches():
@@ -126,7 +124,7 @@ func pop_squares(squares_to_pop):
 	for square in squares_to_pop:
 		var idx = squares.find(square)
 		squares.remove(idx)
-		square.queue_free()
+		square.get_sweet().play_squish()
 
 func remove_row(row):
 	match_rows.remove(match_rows.find(row))
@@ -138,6 +136,11 @@ func remove_col(col):
 	match_rows = []
 	pop_squares(col)
 
+func show_win():
+	$WinScreen.visible = true
+	$GiveUp.visible = false
+	$bgm.stop()
+	$victory.play()
 
 func on_win_pressed():
 	emit_signal("game_win")
