@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scripts/SweetSquish4.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/phone.png" type="Texture" id=2]
@@ -7,6 +7,11 @@
 [ext_resource path="res://assets/art/winlogo.png" type="Texture" id=5]
 [ext_resource path="res://assets/art/orangesweet.png" type="Texture" id=6]
 [ext_resource path="res://assets/art/pinksweet.png" type="Texture" id=7]
+[ext_resource path="res://assets/sound/ss_bgm.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/sound/match.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/sound/pickup.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/sound/victory.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/sound/fail.wav" type="AudioStream" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 52.286, 51.7646 )
@@ -227,4 +232,19 @@ margin_top = 30.6935
 margin_right = 379.924
 margin_bottom = 130.693
 texture_normal = ExtResource( 7 )
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="match" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="victory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="fail" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
 

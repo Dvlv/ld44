@@ -13,6 +13,8 @@ func connect_win():
 	$WinScreen/Ok.connect("pressed", self, "on_win_pressed")
 	$GiveUp.connect("pressed", self, "back_to_home")
 
+	$bgm.play()
+
 func connect_first_clicks():
 	for square in squares:
 		square.connect("was_clicked", self, "on_first_square_clicked")
@@ -28,6 +30,7 @@ func on_first_square_clicked(square):
 	selected_first_square = square
 	selected_first_square.show_border()
 	connect_second_clicks(selected_first_square)
+	$pickup.play()
 
 func disconnect_second_clicks():
 	for square in squares:
@@ -59,6 +62,8 @@ func swap_sweets(sq1, sq2):
 	else:
 		$WinScreen.visible = true
 		$GiveUp.visible = false
+		$bgm.stop()
+		$victory.play()
 
 
 func check_for_matches():
@@ -83,6 +88,7 @@ func check_for_matches():
 
 		if all_match:
 			rows_to_remove.append(row)
+			$match.play()
 		else:
 			continue
 
@@ -104,6 +110,7 @@ func check_for_matches():
 
 		if all_match:
 			cols_to_remove.append(col)
+			$match.play()
 		else:
 			continue
 
@@ -137,4 +144,6 @@ func on_win_pressed():
 
 
 func back_to_home():
+	$bgm.stop()
+	$fail.play()
 	return get_tree().change_scene_to(load("res://scenes/SSHome.tscn"))

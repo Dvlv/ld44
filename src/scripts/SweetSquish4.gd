@@ -33,6 +33,8 @@ func _ready():
 		[$squares/row1/square4, $squares/row2/square4, $squares/row3/square4],
 	]
 
+	$bgm.play()
+
 
 func set_board(s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12):
 	# 1  2  3

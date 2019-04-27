@@ -9,6 +9,7 @@ onready var stories = {
 onready var CS = $CanvasLayer/DialogueBox
 
 func _ready():
+	$bgm.play()
 	if not global.just_exited_time_mcn:
 		if global.story in stories.keys():
 			call(stories[global.story])
