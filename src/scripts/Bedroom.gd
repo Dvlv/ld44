@@ -81,7 +81,7 @@ func winning_scene():
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "I've done it! I have the high score!!"]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Man, today was a great and productive day!"]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Actually, what day is it today?"]},
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Yikes! it's " + str(global.get_current_year()) ]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Yikes! it's the year " + str(global.get_current_year()) ]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Wow, I can't believe almost half of my life has gone by while I say and played on my phone. Totally worth it."]},
 		{"target": self, "method": "load_thanks_scene", "args": []}
 	])

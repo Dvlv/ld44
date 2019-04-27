@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/TimeMachine.gd" type="Script" id=1]
 [ext_resource path="res://assets/sound/tm_bgm.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/sound/timetravel.wav" type="AudioStream" id=3]
 
 [node name="TimeMachine" type="Node2D"]
 script = ExtResource( 1 )
@@ -85,4 +86,7 @@ size_flags_vertical = 3
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+
+[node name="tt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 

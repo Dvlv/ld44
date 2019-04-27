@@ -33,5 +33,9 @@ func on_btn_three_press():
 
 func exit_to_bedroom():
 	# play anim, sound
+	$bgm.stop()
+	$tt.connect("finished", self, "load_bed_scene")
+	$tt.play()
 
+func load_bed_scene():
 	get_tree().change_scene_to(bed)
