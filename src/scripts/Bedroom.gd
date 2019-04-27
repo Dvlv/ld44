@@ -73,9 +73,27 @@ func load_ss_home():
 
 func show_ticket_count():
 	global.animated_scene([
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Man, time sure flies!"]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", random_time_statement()]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Ooh, I have " + ticket_string()]},
 	])
+
+func random_time_statement():
+	var statements = [
+		"Man, time sure flies!",
+		"Wow, I feel older AND wiser!",
+		"Oof, rough landing!",
+		"Sure beats air travel!"
+	]
+
+	if global.get_current_year() > 2025:
+		statements.append("Getting old sucks!")
+		statements.append("Ack, my back!")
+		statements.append("Hello future! Or, is it the past?")
+
+	randomize()
+	var choice = randi() % len(statements)
+
+	return statements[choice]
 
 
 func winning_scene():
