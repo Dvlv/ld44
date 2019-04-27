@@ -40,4 +40,5 @@ func setup(sweets):
 func on_game_win():
 	global.score += 50
 	global.tickets -= 1
+	global.story += 1
 	get_tree().change_scene_to(next_scene)

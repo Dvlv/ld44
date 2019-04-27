@@ -4,6 +4,7 @@ signal finished_displaying
 onready var stories = {
 	0: "intro",
 	1: "out_of_money",
+	2: "eager"
 }
 
 onready var CS = $CanvasLayer/DialogueBox
@@ -12,7 +13,8 @@ func _ready():
 	if not global.just_exited_time_mcn:
 		call(stories[global.story])
 	else:
-
+		if global.story == 1:
+			eager()
 		if global.score > global.HIGH_SCORE:
 			winning_scene()
 		else:
@@ -46,6 +48,17 @@ func out_of_money():
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "... It'll be fine. Just one more level!"]},
 		{"target": self, "method": "load_time_machine", "args": []}
 	])
+
+func eager():
+	global.animated_scene([
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Wow, I can't believe that worked."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Ooh, I have " + str(global.tickets) + " new tickets!"]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Time to play!"]},
+		{"target": self, "method": "load_lvl_3", "args": []}
+	])
+
+func load_lvl_3():
+	get_tree().change_scene_to(load("res://scenes/Level3.tscn"))
 
 func winning_scene():
 	global.animated_scene([

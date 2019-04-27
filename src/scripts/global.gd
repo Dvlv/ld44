@@ -6,7 +6,7 @@ var money = 5000
 var score = 0
 var HIGH_SCORE = 2000
 
-var story = 0
+var story = -1
 var just_exited_time_mcn = false
 
 var frames = []
