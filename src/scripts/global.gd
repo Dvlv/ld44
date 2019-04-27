@@ -3,6 +3,9 @@ extends Node
 var age = 11
 var tickets = 1
 var money = 5000
+var score = 0
+
+var story = 0
 
 var frames = []
 

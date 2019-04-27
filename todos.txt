@@ -1,0 +1,31 @@
+draw art:
+    young timmy
+    teen timmy
+    adult timmy
+    old man timmy
+
+    bedroom
+    
+    SS logo
+
+    orange sweet
+    pink sweet
+    yellow sweet
+
+    
+scenes:
+    SS title
+    SS how2play
+    SS scoreboard
+
+anims:
+    move?
+    explode
+
+
+sound:
+    move
+    explode
+    win
+    bgm
+    text
