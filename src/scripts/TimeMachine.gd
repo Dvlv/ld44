@@ -11,6 +11,7 @@ func _ready():
 	b2.connect("pressed", self, "on_btn_two_press")
 	b3.connect("pressed", self, "on_btn_three_press")
 	global.just_exited_time_mcn = true
+	$bgm.play()
 
 func on_btn_one_press():
 	global.years_skipped += 1
