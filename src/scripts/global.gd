@@ -2,9 +2,8 @@ extends Node
 
 var years_skipped = 0
 var tickets = 1
-var money = 5000
 var score = 0
-var HIGH_SCORE = 2000
+var HIGH_SCORE = 490
 
 var story = -1
 var just_exited_time_mcn = false

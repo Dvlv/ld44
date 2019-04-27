@@ -60,12 +60,17 @@ func eager():
 func load_lvl_3():
 	get_tree().change_scene_to(load("res://scenes/Level3.tscn"))
 
+
+func load_ss_home():
+	get_tree().change_scene_to(load("res://scenes/SSHome.tscn"))
+
+
 func winning_scene():
 	global.animated_scene([
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "I've done it! I have the high score!!"]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Man, today was a great and productive day!"]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Actually, what day is it today?"]},
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Yikes! it's " + global.get_current_year() ]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Yikes! it's " + str(global.get_current_year()) ]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Wow, I can't believe almost half of my life has gone by while I say and played on my phone. Totally worth it."]},
 		{"target": self, "method": "load_thanks_scene", "args": []}
 	])
@@ -123,7 +128,7 @@ func on_door_click(i,event,c):
 func on_phone_click(i,event,c):
 	# load random lvl
 	if (event is InputEventMouseButton && event.pressed):
-		load_lvl_3()
+		load_ss_home()
 
 func show_tm_tip():
 	$bg/tm/tip.visible = true

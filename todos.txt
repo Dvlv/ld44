@@ -17,6 +17,8 @@ scenes:
     SS title
     SS how2play
     SS scoreboard
+    
+    you win
 
 anims:
     move?

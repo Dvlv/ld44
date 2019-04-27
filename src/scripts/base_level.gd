@@ -1,7 +1,8 @@
 extends Node2D
 
 var sweet_scene = preload("res://scenes/Sweet.tscn")
-onready var next_scene = preload("res://scenes/Bedroom.tscn")
+onready var bed_scene = preload("res://scenes/Bedroom.tscn")
+onready var home_scene = preload("res://scenes/SSHome.tscn")
 
 func setup(sweets):
 	$SweetSquish.connect("game_win", self, "on_game_win")
@@ -41,4 +42,7 @@ func on_game_win():
 	global.score += 50
 	global.tickets -= 1
 	global.story += 1
-	get_tree().change_scene_to(next_scene)
+	if global.story < 2:
+		return get_tree().change_scene_to(bed_scene)
+	else:
+		return get_tree().change_scene_to(home_scene)

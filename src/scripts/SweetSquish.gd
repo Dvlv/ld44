@@ -72,7 +72,6 @@ func connect_second_clicks(selected):
 func on_first_square_clicked(square):
 	selected_first_square = square
 	selected_first_square.show_border()
-	print(selected_first_square)
 	connect_second_clicks(selected_first_square)
 
 func disconnect_second_clicks():
@@ -159,14 +158,3 @@ func remove_col(col):
 	match_cols.remove(match_cols.find(col))
 	match_rows = []
 	pop_squares(col)
-
-
-
-
-
-
-
-
-
-
-
