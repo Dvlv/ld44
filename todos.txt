@@ -1,33 +1,32 @@
-draw art:
-    young timmy
-    teen timmy
-    adult timmy
-    old man timmy
-
+art:
+    main logo
+    back arrow
+    exit button
+    
     bedroom
     
-    SS logo
+ending - Timmy old
+ending - Timmy Teen
+ending - Timmy young
 
-    orange sweet
-    pink sweet
-    yellow sweet
+Time Machine background
+Time Machine anim
+Time Machine Buttons
 
-    
-scenes:
-    SS title
-    SS how2play
-    SS scoreboard
-    
-    you win
+Thanks screen
 
-anims:
-    move?
-    explode
+How2play - button, screen
+
+Fonts
+
+New levels
 
 
-sound:
-    move
-    explode
-    win
-    bgm
-    text
+
+Speech Sound
+
+Optional:
+    Another Sweet
+    Another Grid
+    buttons change colour on hover
+    button hover sounds
