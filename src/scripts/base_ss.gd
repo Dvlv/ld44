@@ -9,6 +9,10 @@ var selected_second_square = null
 var match_cols = null
 var match_rows = null
 
+func connect_win():
+	$WinScreen/Ok.connect("pressed", self, "on_win_pressed")
+	$GiveUp.connect("pressed", self, "back_to_home")
+
 func connect_first_clicks():
 	for square in squares:
 		square.connect("was_clicked", self, "on_first_square_clicked")
@@ -53,7 +57,8 @@ func swap_sweets(sq1, sq2):
 		disconnect_second_clicks()
 		connect_first_clicks()
 	else:
-		emit_signal("game_win")
+		$WinScreen.visible = true
+		$GiveUp.visible = false
 
 
 func check_for_matches():
@@ -127,3 +132,9 @@ func remove_col(col):
 	pop_squares(col)
 
 
+func on_win_pressed():
+	emit_signal("game_win")
+
+
+func back_to_home():
+	return get_tree().change_scene_to(load("res://scenes/SSHome.tscn"))

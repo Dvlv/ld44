@@ -2,6 +2,8 @@ extends "res://scripts/base_ss.gd"
 
 
 func _ready():
+	connect_win()
+
 	squares = [
 		$squares/row1/square1,
 		$squares/row1/square2,

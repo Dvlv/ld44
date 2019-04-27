@@ -1,9 +1,12 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scripts/SweetSquish4.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/phone.png" type="Texture" id=2]
 [ext_resource path="res://scripts/square1.gd" type="Script" id=3]
 [ext_resource path="res://assets/art/border.png" type="Texture" id=4]
+[ext_resource path="res://assets/art/winlogo.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/orangesweet.png" type="Texture" id=6]
+[ext_resource path="res://assets/art/pinksweet.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 52.286, 51.7646 )
@@ -61,8 +64,10 @@ position = Vector2( 512, 300 )
 texture = ExtResource( 2 )
 
 [node name="squares" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="row1" type="Node2D" parent="squares"]
+position = Vector2( 0, 140 )
 
 [node name="square1" type="Area2D" parent="squares/row1"]
 position = Vector2( 330, 80 )
@@ -109,7 +114,7 @@ visible = false
 texture = SubResource( 11 )
 
 [node name="row2" type="Node2D" parent="squares"]
-position = Vector2( 0, 200 )
+position = Vector2( 0, 290 )
 
 [node name="square1" type="Area2D" parent="squares/row2"]
 position = Vector2( 330, 80 )
@@ -156,7 +161,7 @@ visible = false
 texture = SubResource( 13 )
 
 [node name="row3" type="Node2D" parent="squares"]
-position = Vector2( 0, 400 )
+position = Vector2( 0, 440 )
 
 [node name="square1" type="Area2D" parent="squares/row3"]
 position = Vector2( 330, 80 )
@@ -201,4 +206,25 @@ shape = SubResource( 14 )
 [node name="border" type="Sprite" parent="squares/row3/square4"]
 visible = false
 texture = SubResource( 15 )
+
+[node name="WinScreen" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="WinScreen"]
+position = Vector2( 512, 300 )
+texture = ExtResource( 5 )
+
+[node name="Ok" type="TextureButton" parent="WinScreen"]
+margin_left = 450.58
+margin_top = 403.926
+margin_right = 550.58
+margin_bottom = 503.926
+texture_normal = ExtResource( 6 )
+
+[node name="GiveUp" type="TextureButton" parent="."]
+margin_left = 279.924
+margin_top = 30.6935
+margin_right = 379.924
+margin_bottom = 130.693
+texture_normal = ExtResource( 7 )
 
