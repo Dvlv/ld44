@@ -1,8 +1,11 @@
 extends Node2D
 
 var sweet_scene = preload("res://scenes/Sweet.tscn")
+onready var next_scene = preload("res://scenes/Bedroom.tscn")
 
 func _ready():
+	$SweetSquish.connect("game_win", self, "on_game_win")
+
 	var s1 = sweet_scene.instance()
 	s1.colour = "orange"
 
@@ -10,7 +13,7 @@ func _ready():
 	s2.colour = "yellow"
 
 	var s3 = sweet_scene.instance()
-	s3.colour = "orange"
+	s3.colour = "pink"
 
 	var s4 = sweet_scene.instance()
 	s4.colour = "yellow"
@@ -19,13 +22,13 @@ func _ready():
 	s5.colour = "orange"
 
 	var s6 = sweet_scene.instance()
-	s6.colour = "yellow"
+	s6.colour = "pink"
 
 	var s7 = sweet_scene.instance()
-	s7.colour = "pink"
+	s7.colour = "orange"
 
 	var s8 = sweet_scene.instance()
-	s8.colour = "pink"
+	s8.colour = "yellow"
 
 	var s9 = sweet_scene.instance()
 	s9.colour = "pink"
@@ -34,3 +37,5 @@ func _ready():
 	$SweetSquish.check_for_matches()
 
 
+func on_game_win():
+	get_tree().change_scene_to(next_scene)
