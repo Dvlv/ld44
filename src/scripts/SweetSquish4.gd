@@ -19,9 +19,9 @@ func _ready():
 	]
 
 	match_rows = [
-		[$squares/row1/square1, $squares/row1/square2, $squares/row1/square3],
-		[$squares/row2/square1, $squares/row2/square2, $squares/row2/square3],
-		[$squares/row3/square1, $squares/row3/square2, $squares/row3/square3],
+		[$squares/row1/square1, $squares/row1/square2, $squares/row1/square3, $squares/row1/square4],
+		[$squares/row2/square1, $squares/row2/square2, $squares/row2/square3, $squares/row2/square4],
+		[$squares/row3/square1, $squares/row3/square2, $squares/row3/square3, $squares/row3/square4],
 	]
 
 	match_cols = [
