@@ -14,6 +14,8 @@ func _ready():
 		if global.story in stories.keys():
 			call(stories[global.story])
 		elif global.score > global.HIGH_SCORE:
+			$bgm.stop()
+			$gamewin.play()
 			return winning_scene()
 		else:
 			return connect_callbacks()
