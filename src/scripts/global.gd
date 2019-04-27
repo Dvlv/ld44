@@ -1,11 +1,12 @@
 extends Node
 
-var age = 11
+var years_skipped = 0
 var tickets = 1
 var money = 5000
 var score = 0
 
 var story = 0
+var just_exited_time_mcn = false
 
 var frames = []
 
