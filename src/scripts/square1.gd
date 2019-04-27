@@ -15,6 +15,6 @@ func set_sweet(sweet):
 func get_sweet():
 	return my_sweet
 	
-func on_input_event(event):
+func on_input_event(viewport, event, shape_idx):
 	if (event is InputEventMouseButton && event.pressed):
 		emit_signal("was_clicked", self)

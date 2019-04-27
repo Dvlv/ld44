@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/SweetSquish.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/phone.png" type="Texture" id=2]
 [ext_resource path="res://scripts/square1.gd" type="Script" id=3]
-[ext_resource path="res://assets/art/orangesweet.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 52.286, 51.7646 )
@@ -47,9 +46,6 @@ texture = ExtResource( 2 )
 position = Vector2( 350, 80 )
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="squares/row1/square1"]
-texture = ExtResource( 4 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="squares/row1/square1"]
 shape = SubResource( 1 )
 
@@ -57,18 +53,12 @@ shape = SubResource( 1 )
 position = Vector2( 500, 80 )
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="squares/row1/square2"]
-texture = ExtResource( 4 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="squares/row1/square2"]
 shape = SubResource( 2 )
 
 [node name="square3" type="Area2D" parent="squares/row1"]
 position = Vector2( 650, 80 )
 script = ExtResource( 3 )
-
-[node name="Sprite" type="Sprite" parent="squares/row1/square3"]
-texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="squares/row1/square3"]
 shape = SubResource( 3 )
@@ -80,9 +70,6 @@ position = Vector2( 0, 200 )
 position = Vector2( 350, 80 )
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="squares/row2/square1"]
-texture = ExtResource( 4 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="squares/row2/square1"]
 shape = SubResource( 4 )
 
@@ -90,18 +77,12 @@ shape = SubResource( 4 )
 position = Vector2( 500, 80 )
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="squares/row2/square2"]
-texture = ExtResource( 4 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="squares/row2/square2"]
 shape = SubResource( 5 )
 
 [node name="square3" type="Area2D" parent="squares/row2"]
 position = Vector2( 650, 80 )
 script = ExtResource( 3 )
-
-[node name="Sprite" type="Sprite" parent="squares/row2/square3"]
-texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="squares/row2/square3"]
 shape = SubResource( 6 )
@@ -113,9 +94,6 @@ position = Vector2( 0, 400 )
 position = Vector2( 350, 80 )
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="squares/row3/square1"]
-texture = ExtResource( 4 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="squares/row3/square1"]
 shape = SubResource( 7 )
 
@@ -123,18 +101,12 @@ shape = SubResource( 7 )
 position = Vector2( 500, 80 )
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="squares/row3/square2"]
-texture = ExtResource( 4 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="squares/row3/square2"]
 shape = SubResource( 8 )
 
 [node name="square3" type="Area2D" parent="squares/row3"]
 position = Vector2( 650, 80 )
 script = ExtResource( 3 )
-
-[node name="Sprite" type="Sprite" parent="squares/row3/square3"]
-texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="squares/row3/square3"]
 shape = SubResource( 9 )
