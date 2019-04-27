@@ -34,7 +34,8 @@ func load_time_machine():
 func intro():
 	global.animated_scene([
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Wow! That was the best game I've ever played."]},
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "I think I have enough money for one more game"]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "I think I have enough money for one more ticket"]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "No point having money and never spending it."]},
 		{"target": self, "method": "load_lvl_2", "args": []}
 	])
 

@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/SSHome.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/phone.png" type="Texture" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://assets/art/orangesweet.png" type="Texture" id=4]
+[ext_resource path="res://assets/art/playbutton.png" type="Texture" id=4]
 [ext_resource path="res://assets/art/pinksweet.png" type="Texture" id=5]
 [ext_resource path="res://assets/sound/ss_bgm.wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/sound/fail.wav" type="AudioStream" id=7]
@@ -22,10 +22,10 @@ texture = ExtResource( 3 )
 [node name="Button" type="TextureButton" parent="."]
 anchor_right = 1.0
 anchor_bottom = 0.24
-margin_left = 459.514
-margin_top = 270.841
-margin_right = 559.514
-margin_bottom = 370.841
+margin_left = 355.0
+margin_top = 280.0
+margin_right = 655.0
+margin_bottom = 430.0
 rect_pivot_offset = Vector2( 50, 50 )
 texture_normal = ExtResource( 4 )
 

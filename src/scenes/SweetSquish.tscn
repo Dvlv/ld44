@@ -5,7 +5,7 @@
 [ext_resource path="res://scripts/square1.gd" type="Script" id=3]
 [ext_resource path="res://assets/art/border.png" type="Texture" id=4]
 [ext_resource path="res://assets/art/winlogo.png" type="Texture" id=5]
-[ext_resource path="res://assets/art/orangesweet.png" type="Texture" id=6]
+[ext_resource path="res://assets/art/okbutton.png" type="Texture" id=6]
 [ext_resource path="res://assets/art/pinksweet.png" type="Texture" id=7]
 [ext_resource path="res://assets/sound/ss_bgm.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/sound/victory.wav" type="AudioStream" id=9]
@@ -166,10 +166,10 @@ position = Vector2( 512, 300 )
 texture = ExtResource( 5 )
 
 [node name="Ok" type="TextureButton" parent="WinScreen"]
-margin_left = 455.491
-margin_top = 428.481
-margin_right = 555.491
-margin_bottom = 528.481
+margin_left = 405.0
+margin_top = 410.0
+margin_right = 605.0
+margin_bottom = 510.0
 texture_normal = ExtResource( 6 )
 
 [node name="GiveUp" type="TextureButton" parent="."]
