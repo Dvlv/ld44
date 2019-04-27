@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Bedroom.gd" type="Script" id=1]
 [ext_resource path="res://scenes/DialogueBox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/art/bedroom.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 91.6105, 190.283 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 23.1204, 39.7971 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 65.2128, 197.38 )
 
 [node name="Bedroom" type="Node2D"]
 script = ExtResource( 1 )
@@ -10,4 +20,54 @@ script = ExtResource( 1 )
 
 [node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 2 )]
 visible = false
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+texture = ExtResource( 3 )
+
+[node name="tm" type="Area2D" parent="bg"]
+position = Vector2( 409.983, 8.82159 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bg/tm"]
+shape = SubResource( 1 )
+
+[node name="tip" type="Label" parent="bg/tm"]
+visible = false
+margin_left = -342.307
+margin_top = -235.341
+margin_right = 97.6935
+margin_bottom = -204.341
+text = "Enter the time machine to get more tickets, in exchange for years of 
+your life."
+align = 1
+
+[node name="phone" type="Area2D" parent="bg"]
+position = Vector2( -66.019, 22.8866 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bg/phone"]
+shape = SubResource( 2 )
+
+[node name="tip" type="Label" parent="bg/phone"]
+visible = false
+margin_left = -73.4802
+margin_top = -75.8128
+margin_right = 84.5198
+margin_bottom = -61.8128
+text = "Play some Sweet Smash!"
+
+[node name="door" type="Area2D" parent="bg"]
+position = Vector2( -411.722, 3.49905 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bg/door"]
+shape = SubResource( 3 )
+
+[node name="tip" type="Label" parent="bg/door"]
+visible = false
+margin_left = -95.6407
+margin_top = -223.939
+margin_right = 183.359
+margin_bottom = -192.939
+text = "Exit the room, and give up on Sweet Smash.
+"
+align = 1
 

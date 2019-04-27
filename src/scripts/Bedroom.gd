@@ -20,7 +20,7 @@ func _ready():
 		else:
 			# connect phone click to next lvl
 			# will be Level + str(story+1), or random lvl
-			pass
+			connect_callbacks()
 
 func load_time_machine():
 	get_tree().change_scene_to(load("res://scenes/TimeMachine.tscn"))
@@ -89,3 +89,57 @@ func get_final_dialogue_based_on_year():
 
 func load_thanks_scene():
 	get_tree().change_scene_to(load("res://scenes/Thanks.tscn"))
+
+
+
+
+
+
+
+######### callbacks
+func connect_callbacks():
+	$bg/tm.connect("input_event", self, "on_tm_click")
+	$bg/tm.connect("mouse_entered", self, "show_tm_tip")
+	$bg/tm.connect("mouse_exited", self, "hide_tm_tip")
+
+	$bg/phone.connect("input_event", self, "on_phone_click")
+	$bg/phone.connect("mouse_entered", self, "show_phone_tip")
+	$bg/phone.connect("mouse_exited", self, "hide_phone_tip")
+
+	$bg/door.connect("input_event", self, "on_door_click")
+	$bg/door.connect("mouse_entered", self, "show_door_tip")
+	$bg/door.connect("mouse_exited", self, "hide_door_tip")
+
+
+func on_tm_click(i,event,c):
+	if (event is InputEventMouseButton && event.pressed):
+		load_time_machine()
+
+func on_door_click(i,event,c):
+	# are you sure?
+	if (event is InputEventMouseButton && event.pressed):
+		quit_playing()
+
+func on_phone_click(i,event,c):
+	# load random lvl
+	if (event is InputEventMouseButton && event.pressed):
+		load_lvl_3()
+
+func show_tm_tip():
+	$bg/tm/tip.visible = true
+
+func hide_tm_tip():
+	$bg/tm/tip.visible = false
+
+func show_phone_tip():
+	$bg/phone/tip.visible = true
+
+func hide_phone_tip():
+	$bg/phone/tip.visible = false
+
+func show_door_tip():
+	$bg/door/tip.visible = true
+
+func hide_door_tip():
+	$bg/door/tip.visible = false
+
