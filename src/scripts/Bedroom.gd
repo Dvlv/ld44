@@ -46,19 +46,17 @@ func out_of_money():
 	global.animated_scene([
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Ah man, I HAVE to get the top score on this game."]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "I can't wait months to get more lives, and I'm out of money."]},
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Hmm... I could always leave my phone on the bed and hop into my time machine."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Hmm... I could always take my phone into my Time Accelerator™."]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "That way I will rack up loads of free lives!"]},
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "If I don't go too far forward, nobody will notice I'm gone."]},
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Oh, right. I forgot - I haven't yet perfected the art of time travel"]},
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "My body will age at twice the speed of the world every time I jump forwards."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "I will also get a bit older in the process, but hopefully nobody will notice."]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "... It'll be fine. Just one more level!"]},
 		{"target": self, "method": "load_time_machine", "args": []}
 	])
 
 func eager():
 	global.animated_scene([
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Wow, I can't believe that worked."]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Ooh, I have " + ticket_string()]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Wow, I can't believe that worked."]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "This rocks! I don't need money, my life is currency."]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Time to play!"]},
 		{"target": self, "method": "load_lvl_3", "args": []}

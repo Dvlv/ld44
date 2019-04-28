@@ -12,6 +12,9 @@ func _ready():
 	if global.story < 0:
 		$Close.visible = false
 
+	$instruc.connect("pressed", self, "show_instr")
+	$InstructionsPage/CloseInst.connect("pressed", self, "close_instr")
+
 	$bgm.play()
 
 func play():
@@ -29,3 +32,13 @@ func play():
 func close():
 	$fail.play()
 	return get_tree().change_scene_to(load("res://scenes/Bedroom.tscn"))
+
+func show_instr():
+	$InstructionsPage.visible = true
+
+func close_instr():
+	$InstructionsPage.visible = false
+
+
+
+

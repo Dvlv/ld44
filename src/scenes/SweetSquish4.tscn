@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scripts/SweetSquish4.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/phone.png" type="Texture" id=2]
@@ -60,6 +60,24 @@ extents = Vector2( 52.286, 51.7646 )
 [sub_resource type="StreamTexture" id=15]
 flags = 4
 load_path = "res://.import/border.png-264d4a92a994072aad8f763cd6a974c3.stex"
+
+[sub_resource type="Animation" id=16]
+resource_name = "win"
+length = 0.5
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 512, 300 ), Vector2( 512, 275 ), Vector2( 512, 300 ) ]
+}
 
 [node name="SweetSquish" type="Node2D"]
 script = ExtResource( 1 )
@@ -225,6 +243,9 @@ margin_top = 410.0
 margin_right = 605.0
 margin_bottom = 510.0
 texture_normal = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WinScreen"]
+anims/win = SubResource( 16 )
 
 [node name="GiveUp" type="TextureButton" parent="."]
 margin_left = 279.924

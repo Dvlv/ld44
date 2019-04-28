@@ -144,6 +144,7 @@ func show_win():
 	$GiveUp.visible = false
 	$bgm.stop()
 	$victory.play()
+	$WinScreen/AnimationPlayer.play("win")
 
 func on_win_pressed():
 	emit_signal("game_win")

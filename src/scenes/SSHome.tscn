@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/SSHome.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/phone.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://assets/sound/ss_bgm.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/sound/fail.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/art/ticket.png" type="Texture" id=9]
+[ext_resource path="res://assets/art/instructionsbutton.png" type="Texture" id=10]
+[ext_resource path="res://assets/art/instframe.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/Ubuntu-R.ttf"
@@ -46,6 +48,14 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 503.618, 211 ), Vector2( 503.618, 230 ), Vector2( 503.618, 211 ) ]
 }
+
+[sub_resource type="DynamicFont" id=6]
+size = 22
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 1 )
 
 [node name="SS Home" type="Node2D"]
 script = ExtResource( 1 )
@@ -146,4 +156,44 @@ anims/main = SubResource( 5 )
 position = Vector2( 460.947, 459.078 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 9 )
+
+[node name="instruc" type="TextureButton" parent="."]
+margin_left = 632.995
+margin_top = 24.3518
+margin_right = 749.995
+margin_bottom = 74.3518
+texture_normal = ExtResource( 10 )
+expand = true
+
+[node name="InstructionsPage" type="Node2D" parent="."]
+editor/display_folded = true
+visible = false
+
+[node name="Sprite" type="Sprite" parent="InstructionsPage"]
+position = Vector2( 512, 300 )
+texture = ExtResource( 11 )
+
+[node name="CloseInst" type="TextureButton" parent="InstructionsPage"]
+margin_left = 327.0
+margin_top = 70.0
+margin_right = 367.0
+margin_bottom = 112.0
+texture_normal = ExtResource( 6 )
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="InstructionsPage"]
+margin_left = 339.0
+margin_top = 131.0
+margin_right = 701.0
+margin_bottom = 546.0
+custom_fonts/normal_font = SubResource( 6 )
+text = "Match all the same sweets in a row or column to squish them.
+
+Click on a sweet to select it, then click on another to swap them.
+
+You win when you have squished all sweets on the screen.
+
+If you get stuck, click the Quit button to exit a level.
+
+Each level costs one ticket to enter."
 

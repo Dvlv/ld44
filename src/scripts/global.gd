@@ -3,7 +3,7 @@ extends Node
 var years_skipped = 0
 var tickets = 1
 var score = 0
-var HIGH_SCORE = 249
+var HIGH_SCORE = 449
 
 var story = -1
 var just_exited_time_mcn = false
