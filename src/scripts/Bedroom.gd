@@ -84,7 +84,7 @@ func random_time_statement():
 		"Sure beats air travel!"
 	]
 
-	if global.get_current_year() > 2025:
+	if global.get_timmy_age() > 19:
 		statements.append("Getting old sucks!")
 		statements.append("Ack, my back!")
 		statements.append("Hello future! Or, is it the past?")
@@ -97,12 +97,12 @@ func random_time_statement():
 
 func winning_scene():
 	global.animated_scene([
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "I've done it! I have the high score!!"]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "I've done it! I have the top score!!"]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Man, today was a great and productive day!"]},
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Man, I feel a bit older, too"]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "I feel a bit older, too"]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Yikes! I've skipped " + str(global.years_skipped) + " years." ]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "That means I'm " + str(global.get_timmy_age()) + " now."]},
-		{"target": self, "method": "ending", "args": []}
+		{"target": self, "method": "adult_ending", "args": []}
 	])
 
 func quit_playing():
@@ -126,6 +126,7 @@ func young_ending():
 		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "Timmy returned downstairs to play with the rest of his presents"]},
 		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "Nobody noticed his slight increase in age."]},
 		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "The rest of his life carried on normally, people just assumed he had matured early."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "Timmy never played another mobile game again, as he heard of kids becoming addicted."]},
 		{"target": self, "method": "load_thanks_scene", "args": []}
 	])
 
@@ -133,9 +134,10 @@ func teenage_ending():
 	$bg.texture = load("res://assets/art/17today.png")
 	global.animated_scene([
 		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "Timmy stopped to look at himself and saw a tall, spotty teenager."]},
-		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "In a brief flask of panic and creativity, he ran around and altered his '11 Today' posters to say '17 Today' instead."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "In a brief flash of panic and creativity, he ran around and altered his '11 Today' posters to say '17 Today' instead."]},
 		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "He somehow convinced everybody that they were going crazy, and he had been a teenager all along."]},
 		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "Unfortunately, he coundn't keep up at school. His grades were terrible, and his parents grounded him a lot."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "They took his phone away, blaming mobile game addiction for his inability to finish his homework."]},
 		{"target": self, "method": "load_thanks_scene", "args": []}
 	])
 
@@ -191,7 +193,6 @@ func on_door_click(i,event,c):
 		quit_playing()
 
 func on_phone_click(i,event,c):
-	# load random lvl
 	if (event is InputEventMouseButton && event.pressed):
 		load_ss_home()
 

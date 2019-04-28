@@ -1,4 +1,4 @@
-extends "res://scripts/base_level.gd"
+extends "res://scripts/base_level_2.gd"
 
 func _ready():
-	setup(["orange", "yellow", "pink", "yellow", "orange", "pink", "orange", "yellow", "pink"])
+	setup(["orange", "yellow", "yellow", "orange", "orange", "yellow"])

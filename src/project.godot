@@ -15,7 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="ylic"
+config/name="Sweet Squish"
+run/main_scene="res://scenes/SSHome.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -33,4 +34,7 @@ window/stretch/aspect="keep"
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation=1
+vram_compression/import_etc=true
+quality/directional_shadow/size=256

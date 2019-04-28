@@ -1,1 +1,4 @@
 *.import
+src/exports
+exports/*.zip
+exports/ss

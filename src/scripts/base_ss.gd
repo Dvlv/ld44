@@ -155,4 +155,5 @@ func on_win_pressed():
 func back_to_home():
 	$bgm.stop()
 	$fail.play()
+	global.last_level -= 1
 	return get_tree().change_scene_to(load("res://scenes/SSHome.tscn"))

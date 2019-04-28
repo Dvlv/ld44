@@ -9,29 +9,29 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 105.877, 190.283 )
 
-[sub_resource type="DynamicFontData" id=17]
+[sub_resource type="DynamicFontData" id=2]
 font_path = "res://assets/Ubuntu-R.ttf"
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 size = 25
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
-font_data = SubResource( 17 )
+font_data = SubResource( 2 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 73.3504, 79.1382 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=5]
 size = 31
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
-font_data = SubResource( 17 )
+font_data = SubResource( 2 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 51.6529, 227.705 )
 
 [sub_resource type="DynamicFont" id=7]
@@ -40,7 +40,7 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
-font_data = SubResource( 17 )
+font_data = SubResource( 2 )
 
 [sub_resource type="DynamicFont" id=8]
 size = 24
@@ -48,7 +48,7 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
-font_data = SubResource( 17 )
+font_data = SubResource( 2 )
 
 [node name="Bedroom" type="Node2D"]
 script = ExtResource( 1 )
@@ -75,7 +75,7 @@ margin_left = -335.309
 margin_top = -122.205
 margin_right = 127.691
 margin_bottom = -44.205
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 text = "Enter the Time Accelerator™ 
 to get more tickets!"
 align = 1
@@ -85,7 +85,7 @@ position = Vector2( -66.019, 22.8866 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bg/phone"]
 position = Vector2( 89.809, 54.8185 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="tip" type="Label" parent="bg/phone"]
 visible = false
@@ -93,7 +93,7 @@ margin_left = -72.3138
 margin_top = 116.635
 margin_right = 261.686
 margin_bottom = 150.635
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "Play some Sweet Squish!"
 
 [node name="door" type="Area2D" parent="bg"]
@@ -101,7 +101,7 @@ position = Vector2( -411.722, 3.49905 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bg/door"]
 position = Vector2( -48.9868, 73.4801 )
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="tip" type="Label" parent="bg/door"]
 visible = false
