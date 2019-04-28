@@ -1,23 +1,37 @@
-art:
-    main logo
-    back arrow
-    exit button
-    
-    bedroom
-    
+   
 ending - Timmy old
 ending - Timmy Teen
 ending - Timmy young
 
-Time Machine background
-Time Machine anim
-Time Machine Buttons
 
-Thanks screen
 
-How2play - button, screen
+y:
+Timmy returned downstairs to play with the rest of his presents. 
 
-Fonts
+Nobody paid any attention to his slightly increased age. Everyone just assumed he had matured early, and he lived a normal life.
+
+t:
+Timmmy took a look at himself and saw a tall, spotty teenager. 
+
+In a brief flash of creativity, he ran around altering his "11 Today" posters to say "17 Today" instead. 
+
+He somehow convinced everybody that they were going crazy, and he had been a teenager for ages.
+
+Unfortunately, his school grades were terrible, and Timmy became permanently grounded.
+
+
+
+a:
+In all of the excitement to be the best at Sweet Squish, Timmy had squandered away his entire childhood and teenage years. 
+
+Now a fully grown adult, he felt it easier to run away than try to explain to his parents that he had been playing with the Time Accelerator. 
+
+He now lives as a farmer, growing his own food.
+
+He only eats vegetables, and won't touch another piece of candy again.
+
+
+
 
 New levels
 

@@ -121,20 +121,32 @@ func ending():
 
 
 func young_ending():
+	$bg.texture = load("res://assets/art/presents.png")
 	global.animated_scene([
-		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "This is the young ending."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "Timmy returned downstairs to play with the rest of his presents"]},
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "Nobody noticed his slight increase in age."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "The rest of his life carried on normally, people just assumed he had matured early."]},
 		{"target": self, "method": "load_thanks_scene", "args": []}
 	])
 
 func teenage_ending():
+	$bg.texture = load("res://assets/art/17today.png")
 	global.animated_scene([
-		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "This is the teenage ending."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "Timmy stopped to look at himself and saw a tall, spotty teenager."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "In a brief flask of panic and creativity, he ran around and altered his '11 Today' posters to say '17 Today' instead."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "He somehow convinced everybody that they were going crazy, and he had been a teenager all along."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "Unfortunately, he coundn't keep up at school. His grades were terribly, and his parents grounded him a lot."]},
 		{"target": self, "method": "load_thanks_scene", "args": []}
 	])
 
 func adult_ending():
+	$bg.texture = load("res://assets/art/farm.png")
 	global.animated_scene([
-		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "This is the adult ending."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "In all of the excitement to be the best at Sweet Squish, Timmy had squandered away his entire childhood and teenage years. "]},
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "Now a fully-grown adult, he felt it easier to run away than to try and explain that he had been playing with the Time Accelerator™."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "He now lives as a farmer, growing his own food. "]},
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "He refuses to eat Candy ever again."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "On the bright side, his teeth are very healthy!"]},
 		{"target": self, "method": "load_thanks_scene", "args": []}
 	])
 
