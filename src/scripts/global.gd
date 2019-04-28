@@ -15,7 +15,7 @@ var frames = []
 
 func get_random_level():
 	randomize()
-	var levels = [4, 5, 6, 7, 8]
+	var levels = [4, 5, 6, 7, 8, 9, 10, 11, 12]
 	levels.shuffle()
 	var chosen_lvl = ""
 	if levels[0] == last_level:

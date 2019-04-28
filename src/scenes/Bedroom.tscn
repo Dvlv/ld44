@@ -112,7 +112,7 @@ margin_bottom = -101.449
 custom_fonts/font = SubResource( 7 )
 text = "Exit the room
  and give up on Sweet Squish.
-"
+(Quit)"
 align = 1
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
