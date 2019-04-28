@@ -140,6 +140,8 @@ func remove_col(col):
 	pop_squares(col)
 
 func show_win():
+	$WinScreen/ScoreText.text = "+50 Score! \nNew Score: " + str(global.score + 50) + " \nTop Score: " + str(global.HIGH_SCORE)
+
 	$WinScreen.visible = true
 	$GiveUp.visible = false
 	$bgm.stop()

@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 105.877, 190.283 )
 
-[sub_resource type="DynamicFontData" id=4]
+[sub_resource type="DynamicFontData" id=17]
 font_path = "res://assets/Ubuntu-R.ttf"
 
 [sub_resource type="DynamicFont" id=5]
@@ -18,7 +18,7 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
-font_data = SubResource( 4 )
+font_data = SubResource( 17 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 73.3504, 79.1382 )
@@ -29,7 +29,7 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
-font_data = SubResource( 4 )
+font_data = SubResource( 17 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 51.6529, 227.705 )
@@ -40,7 +40,7 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
-font_data = SubResource( 4 )
+font_data = SubResource( 17 )
 
 [sub_resource type="DynamicFont" id=8]
 size = 24
@@ -48,7 +48,7 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
-font_data = SubResource( 4 )
+font_data = SubResource( 17 )
 
 [node name="Bedroom" type="Node2D"]
 script = ExtResource( 1 )
@@ -123,9 +123,17 @@ stream = ExtResource( 5 )
 
 [node name="ins" type="Label" parent="."]
 margin_left = 358.07
-margin_top = 568.013
+margin_top = 537.688
 margin_right = 940.07
-margin_bottom = 602.013
+margin_bottom = 571.688
 custom_fonts/font = SubResource( 8 )
 text = "Click something to perform actions"
+
+[node name="ins2" type="Label" parent="."]
+margin_left = 282.257
+margin_top = 564.514
+margin_right = 864.257
+margin_bottom = 598.514
+custom_fonts/font = SubResource( 8 )
+text = "Use the Time Accelerator™ to unlock more tickets"
 

@@ -12,7 +12,7 @@
 [ext_resource path="res://assets/art/instructionsbutton.png" type="Texture" id=10]
 [ext_resource path="res://assets/art/instframe.png" type="Texture" id=11]
 
-[sub_resource type="DynamicFontData" id=4]
+[sub_resource type="DynamicFontData" id=17]
 font_path = "res://assets/Ubuntu-R.ttf"
 
 [sub_resource type="DynamicFont" id=3]
@@ -20,7 +20,7 @@ size = 20
 outline_size = 1
 outline_color = Color( 0.486275, 0.0509804, 0.0941176, 1 )
 use_filter = true
-font_data = SubResource( 4 )
+font_data = SubResource( 17 )
 
 [sub_resource type="DynamicFontData" id=7]
 antialiased = false
@@ -55,7 +55,7 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
-font_data = SubResource( 4 )
+font_data = SubResource( 17 )
 
 [node name="SS Home" type="Node2D"]
 script = ExtResource( 1 )
@@ -130,13 +130,13 @@ custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1
 custom_constants/shadow_offset_y = 2
-text = "High Score: 6000"
+text = "Top Score: 6000"
 
 [node name="myscore" type="Label" parent="."]
-margin_left = 310.027
-margin_top = 540.521
-margin_right = 410.027
-margin_bottom = 557.521
+margin_left = 303.672
+margin_top = 534.165
+margin_right = 403.672
+margin_bottom = 551.165
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1

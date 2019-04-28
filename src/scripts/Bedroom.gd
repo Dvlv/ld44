@@ -57,7 +57,7 @@ func eager():
 	global.animated_scene([
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Ooh, I have " + ticket_string()]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Wow, I can't believe that worked."]},
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "This rocks! I don't need money, my life is currency."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "This rocks! I don't need money, it's like my lifetime is the currency."]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Time to play!"]},
 		{"target": self, "method": "load_lvl_3", "args": []}
 	])
@@ -135,7 +135,7 @@ func teenage_ending():
 		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "Timmy stopped to look at himself and saw a tall, spotty teenager."]},
 		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "In a brief flask of panic and creativity, he ran around and altered his '11 Today' posters to say '17 Today' instead."]},
 		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "He somehow convinced everybody that they were going crazy, and he had been a teenager all along."]},
-		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "Unfortunately, he coundn't keep up at school. His grades were terribly, and his parents grounded him a lot."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "Unfortunately, he coundn't keep up at school. His grades were terrible, and his parents grounded him a lot."]},
 		{"target": self, "method": "load_thanks_scene", "args": []}
 	])
 
@@ -186,8 +186,8 @@ func on_tm_click(i,event,c):
 		load_time_machine()
 
 func on_door_click(i,event,c):
-	# are you sure?
 	if (event is InputEventMouseButton && event.pressed):
+		hide_door_tip()
 		quit_playing()
 
 func on_phone_click(i,event,c):

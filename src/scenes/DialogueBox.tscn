@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/frame.png" type="Texture" id=2]
 [ext_resource path="res://scripts/Text.gd" type="Script" id=3]
+[ext_resource path="res://assets/sound/talk2s.wav" type="AudioStream" id=4]
 
-[sub_resource type="DynamicFontData" id=4]
+[sub_resource type="DynamicFontData" id=17]
 font_path = "res://assets/Ubuntu-R.ttf"
 
 [sub_resource type="DynamicFont" id=2]
@@ -13,7 +14,7 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
-font_data = SubResource( 4 )
+font_data = SubResource( 17 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 15
@@ -21,7 +22,7 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
-font_data = SubResource( 4 )
+font_data = SubResource( 17 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 15
@@ -29,7 +30,7 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
-font_data = SubResource( 4 )
+font_data = SubResource( 17 )
 
 [node name="DialogueBox" type="Control"]
 anchor_right = 1.0
@@ -96,6 +97,11 @@ margin_bottom = 142.0
 custom_fonts/normal_font = SubResource( 5 )
 text = "Here is some text"
 script = ExtResource( 3 )
+
+[node name="blip" type="AudioStreamPlayer" parent="VBoxContainer/MarginContainer3/NinePatchRect/Text"]
+stream = ExtResource( 4 )
+volume_db = -10.722
+pitch_scale = 0.67
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.01
