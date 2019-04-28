@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/art/border.png" type="Texture" id=4]
 [ext_resource path="res://assets/art/winlogo.png" type="Texture" id=5]
 [ext_resource path="res://assets/art/okbutton.png" type="Texture" id=6]
-[ext_resource path="res://assets/art/pinksweet.png" type="Texture" id=7]
+[ext_resource path="res://assets/art/quitbutton.png" type="Texture" id=7]
 [ext_resource path="res://assets/sound/ss_bgm.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/sound/match.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/sound/pickup.wav" type="AudioStream" id=10]
@@ -231,6 +231,7 @@ margin_left = 279.924
 margin_top = 30.6935
 margin_right = 379.924
 margin_bottom = 130.693
+rect_scale = Vector2( 0.5, 0.5 )
 texture_normal = ExtResource( 7 )
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]

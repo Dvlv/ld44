@@ -2,6 +2,7 @@ extends Node2D
 
 
 func _ready():
+	$AnimationPlayer.play("main")
 	$Tickets.text = "Tickets: " + str(global.tickets)
 	$hiscore.text = "High Score: " + str(global.HIGH_SCORE)
 	$myscore.text = "My Score: " + str(global.score)

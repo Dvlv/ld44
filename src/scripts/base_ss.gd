@@ -14,6 +14,9 @@ func connect_win():
 	$GiveUp.connect("pressed", self, "back_to_home")
 	$Timer.connect("timeout", self, "show_win")
 
+	if global.story < 2:
+		$GiveUp.visible = false
+
 	$bgm.play()
 
 func connect_first_clicks():

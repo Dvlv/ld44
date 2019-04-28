@@ -1,12 +1,51 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/SSHome.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/phone.png" type="Texture" id=2]
 [ext_resource path="res://assets/art/logo.png" type="Texture" id=3]
 [ext_resource path="res://assets/art/playbutton.png" type="Texture" id=4]
-[ext_resource path="res://assets/art/exitbutton.png" type="Texture" id=5]
-[ext_resource path="res://assets/sound/ss_bgm.wav" type="AudioStream" id=6]
-[ext_resource path="res://assets/sound/fail.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/ubuntu-df.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/art/exitbutton.png" type="Texture" id=6]
+[ext_resource path="res://assets/sound/ss_bgm.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/sound/fail.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/art/ticket.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/Ubuntu-R.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+outline_size = 1
+outline_color = Color( 0.486275, 0.0509804, 0.0941176, 1 )
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=4]
+antialiased = false
+font_path = "res://assets/Ubuntu-R.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 23
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = SubResource( 4 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "main"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("SSLogo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 503.618, 211 ), Vector2( 503.618, 230 ), Vector2( 503.618, 211 ) ]
+}
 
 [node name="SS Home" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,67 +55,95 @@ position = Vector2( 512, 300 )
 texture = ExtResource( 2 )
 
 [node name="SSLogo" type="Sprite" parent="."]
-position = Vector2( 503.618, 211.365 )
+position = Vector2( 503.618, 230 )
 texture = ExtResource( 3 )
 
 [node name="Button" type="TextureButton" parent="."]
 anchor_right = 1.0
 anchor_bottom = 0.24
 margin_left = 355.0
-margin_top = 280.0
+margin_top = 298.571
 margin_right = 655.0
-margin_bottom = 430.0
+margin_bottom = 448.571
 rect_pivot_offset = Vector2( 50, 50 )
 texture_normal = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="."]
 visible = false
-margin_left = 342.907
-margin_top = 456.043
-margin_right = 696.907
-margin_bottom = 504.043
-text = "Sorry, you are out of tickets."
+margin_left = 383.144
+margin_top = 290.454
+margin_right = 737.144
+margin_bottom = 338.454
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.772549, 0.309804, 0.0313726, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Sorry, you are out of tickets!"
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 406.807
-margin_top = 446.499
-margin_right = 614.807
-margin_bottom = 477.499
+margin_left = 507.158
+margin_top = 542.632
+margin_right = 770.158
+margin_bottom = 587.632
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 2
 text = "One FREE ticket every 6 months!
  (normally $5000)"
 align = 1
 
 [node name="Tickets" type="Label" parent="."]
-margin_left = 471.444
-margin_top = 423.159
-margin_right = 540.444
-margin_bottom = 437.159
+margin_left = 481.986
+margin_top = 443.94
+margin_right = 592.986
+margin_bottom = 470.94
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 2
 text = "Tickets: 69"
 
 [node name="Close" type="TextureButton" parent="."]
-margin_left = 298.586
-margin_top = 32.6578
-margin_right = 338.586
-margin_bottom = 72.6578
-texture_normal = ExtResource( 5 )
+margin_left = 280.789
+margin_top = 23.3724
+margin_right = 380.789
+margin_bottom = 123.372
+rect_scale = Vector2( 0.6, 0.6 )
+texture_normal = ExtResource( 6 )
 
 [node name="hiscore" type="Label" parent="."]
-margin_left = 339.403
-margin_top = 503.669
-margin_right = 386.403
-margin_bottom = 517.669
-text = "hiscore"
+margin_left = 298.393
+margin_top = 510.633
+margin_right = 411.393
+margin_bottom = 527.633
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 2
+text = "High Score: 6000"
 
 [node name="myscore" type="Label" parent="."]
-margin_left = 334.015
-margin_top = 547.485
-margin_right = 389.015
-margin_bottom = 561.485
-text = "myscore"
+margin_left = 310.027
+margin_top = 540.521
+margin_right = 410.027
+margin_bottom = 557.521
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 2
+text = "My Score: 6000"
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 7 )
 
 [node name="fail" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
+stream = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/main = SubResource( 5 )
+
+[node name="Ticket" type="Sprite" parent="."]
+position = Vector2( 460.947, 459.078 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
 
