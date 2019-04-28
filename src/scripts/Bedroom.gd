@@ -45,8 +45,8 @@ func load_lvl_2():
 func out_of_money():
 	global.animated_scene([
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Ah man, I HAVE to get the top score on this game."]},
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "I can't wait months to get more lives, and I'm out of money."]},
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Hmm... I could always take my phone into my Time Accelerator™."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "I can't wait a whole year to get more lives, and I'm out of money."]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Hmm... I could always take my phone into the Time Accelerator™."]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "That way I will rack up loads of free lives!"]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "I will also get a bit older in the process, but hopefully nobody will notice."]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "... It'll be fine. Just one more level!"]},
@@ -99,28 +99,46 @@ func winning_scene():
 	global.animated_scene([
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "I've done it! I have the high score!!"]},
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Man, today was a great and productive day!"]},
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Actually, what day is it today?"]},
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Yikes! it's the year " + str(global.get_current_year()) ]},
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Wow, I can't believe almost half of my life has gone by while I say and played on my phone. Totally worth it."]},
-		{"target": self, "method": "load_thanks_scene", "args": []}
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Man, I feel a bit older, too"]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "Yikes! I've skipped " + str(global.years_skipped) + " years." ]},
+		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "That means I'm " + str(global.get_timmy_age()) + " now."]},
+		{"target": self, "method": "ending", "args": []}
 	])
 
 func quit_playing():
 	global.animated_scene([
 		{"target": CS, "method": "show_dialogue", "args": ["Timmy", "I'm bored. I should do something else instead"]},
-		{"target": CS, "method": "show_dialogue", "args": ["Timmy", get_final_dialogue_based_on_year() ]},
+		{"target": self, "method": "ending", "args": []}
+	])
+
+func ending():
+	if global.years_skipped < 2:
+		return young_ending()
+	elif global.years_skipped > 2 and global.years_skipped < 9:
+		return teenage_ending()
+	else:
+		return adult_ending()
+
+
+func young_ending():
+	global.animated_scene([
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "This is the young ending."]},
+		{"target": self, "method": "load_thanks_scene", "args": []}
+	])
+
+func teenage_ending():
+	global.animated_scene([
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "This is the teenage ending."]},
+		{"target": self, "method": "load_thanks_scene", "args": []}
+	])
+
+func adult_ending():
+	global.animated_scene([
+		{"target": CS, "method": "show_dialogue", "args": ["Narrator", "This is the adult ending."]},
 		{"target": self, "method": "load_thanks_scene", "args": []}
 	])
 
 
-func get_final_dialogue_based_on_year():
-	var cy = global.get_current_year()
-	if cy >= 2023:
-		return "Wow, I can't believe almost half of my life has gone by while I say and played on my phone. Was it worth it?"
-	elif cy > 2020 and cy < 2023:
-		return "Man, I wasted a lot of time on that game. Good thing I didn't get addicted, or who knows how many more years I would have skipped."
-	elif cy <= 2020:
-		return "I'm glad I didn't waste too much time playing that game. I might have missed the robot uprising or something!"
 
 func load_thanks_scene():
 	get_tree().change_scene_to(load("res://scenes/Thanks.tscn"))

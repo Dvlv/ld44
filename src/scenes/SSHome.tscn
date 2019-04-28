@@ -90,15 +90,15 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Sorry, you are out of tickets!"
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 507.158
+margin_left = 501.326
 margin_top = 542.632
-margin_right = 770.158
+margin_right = 764.326
 margin_bottom = 587.632
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1
 custom_constants/shadow_offset_y = 2
-text = "One FREE ticket every 6 months!
+text = "One FREE ticket every 12 months!
  (normally $5000)"
 align = 1
 
@@ -166,7 +166,6 @@ texture_normal = ExtResource( 10 )
 expand = true
 
 [node name="InstructionsPage" type="Node2D" parent="."]
-editor/display_folded = true
 visible = false
 
 [node name="Sprite" type="Sprite" parent="InstructionsPage"]

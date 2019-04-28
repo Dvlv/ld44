@@ -17,21 +17,21 @@ func _ready():
 func on_btn_one_press():
 	$bg1.texture = tex2
 	global.years_skipped += 1
-	global.tickets += 2
+	global.tickets += 1
 
 	exit_to_bedroom()
 
 func on_btn_two_press():
 	$bg1.texture = tex2
-	global.years_skipped += 2
-	global.tickets += 4
+	global.years_skipped += 3
+	global.tickets += 3
 
 	exit_to_bedroom()
 
 func on_btn_three_press():
 	$bg1.texture = tex2
-	global.years_skipped += 3
-	global.tickets += 6
+	global.years_skipped += 5
+	global.tickets += 5
 
 	exit_to_bedroom()
 

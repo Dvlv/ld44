@@ -1,9 +1,9 @@
 extends Node
 
 var years_skipped = 0
-var tickets = 1
+var tickets = 2
 var score = 0
-var HIGH_SCORE = 449
+var HIGH_SCORE = 149
 
 var story = -1
 var just_exited_time_mcn = false
@@ -29,6 +29,9 @@ func get_random_level():
 func get_current_year():
 	return 2019 + years_skipped
 
+func get_timmy_age():
+	return 11 + years_skipped
+
 func tie_together_frames():
     frames.remove(0)
 
@@ -50,7 +53,8 @@ func animated_scene(structure):
 
     var current = frames[0]
 
-    current["target"].connect("finished_displaying", self, "tie_together_frames")
+    if not current["target"].is_connected("finished_displaying", self, "tie_together_frames"):
+        current["target"].connect("finished_displaying", self, "tie_together_frames")
 
     # begin executing the chain by calling the first item's method
     current["target"].callv(current["method"], current["args"])
