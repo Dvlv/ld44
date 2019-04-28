@@ -5,6 +5,7 @@ onready var b2 = $Control/VBoxContainer/CenterContainer2/TextureButton
 onready var b3 = $Control/VBoxContainer/CenterContainer3/TextureButton
 
 onready var bed = preload("res://scenes/Bedroom.tscn")
+onready var tex2 = preload("res://assets/art/tm-2.png")
 
 func _ready():
 	b1.connect("pressed", self, "on_btn_one_press")
@@ -14,18 +15,21 @@ func _ready():
 	$bgm.play()
 
 func on_btn_one_press():
+	$bg1.texture = tex2
 	global.years_skipped += 1
 	global.tickets += 2
 
 	exit_to_bedroom()
 
 func on_btn_two_press():
+	$bg1.texture = tex2
 	global.years_skipped += 2
 	global.tickets += 4
 
 	exit_to_bedroom()
 
 func on_btn_three_press():
+	$bg1.texture = tex2
 	global.years_skipped += 3
 	global.tickets += 6
 
