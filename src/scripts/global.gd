@@ -3,7 +3,7 @@ extends Node
 var years_skipped = 0
 var tickets = 2
 var score = 0
-var HIGH_SCORE = 2000
+var HIGH_SCORE = 535
 
 var story = -1
 var just_exited_time_mcn = false
@@ -14,16 +14,16 @@ var frames = []
 
 
 func get_random_level():
-	randomize()
 	var levels = [4, 5, 6, 7, 8, 9, 10, 11, 12]
-	levels.shuffle()
-	var chosen_lvl = ""
-	if levels[0] == last_level:
-		chosen_lvl = levels[1]
-	else:
-		chosen_lvl = levels[0]
+	var chosen_level = last_level + 1
+	if chosen_level >= len(levels):
+		last_level = 0
+		chosen_level = 0
 
-	return "Level" + str(chosen_lvl) + ".tscn"
+	var level_scene = "Level" + str(levels[chosen_level]) + ".tscn"
+	last_level = chosen_level
+
+	return level_scene
 
 
 func get_current_year():
