@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/Bedroom.gd" type="Script" id=1]
 [ext_resource path="res://scenes/DialogueBox.tscn" type="PackedScene" id=2]
@@ -7,13 +7,48 @@
 [ext_resource path="res://assets/sound/gw2.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 91.6105, 190.283 )
+extents = Vector2( 105.877, 190.283 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://assets/Ubuntu-R.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 23.1204, 39.7971 )
+extents = Vector2( 73.3504, 79.1382 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 31
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 65.2128, 197.38 )
+extents = Vector2( 51.6529, 227.705 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 25
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 4 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 4 )
 
 [node name="Bedroom" type="Node2D"]
 script = ExtResource( 1 )
@@ -31,45 +66,52 @@ texture = ExtResource( 3 )
 position = Vector2( 409.983, 8.82159 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bg/tm"]
+position = Vector2( 5.83179, 90.9754 )
 shape = SubResource( 1 )
 
 [node name="tip" type="Label" parent="bg/tm"]
 visible = false
-margin_left = -342.307
-margin_top = -235.341
-margin_right = 97.6935
-margin_bottom = -204.341
-text = "Enter the Time Accelerator™ to get more tickets, in exchange for years of 
-your life."
+margin_left = -335.309
+margin_top = -122.205
+margin_right = 127.691
+margin_bottom = -44.205
+custom_fonts/font = SubResource( 5 )
+text = "Enter the Time Accelerator™ 
+to get more tickets!"
 align = 1
 
 [node name="phone" type="Area2D" parent="bg"]
 position = Vector2( -66.019, 22.8866 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bg/phone"]
+position = Vector2( 89.809, 54.8185 )
 shape = SubResource( 2 )
 
 [node name="tip" type="Label" parent="bg/phone"]
 visible = false
-margin_left = -73.4802
-margin_top = -75.8128
-margin_right = 84.5198
-margin_bottom = -61.8128
+margin_left = -72.3138
+margin_top = 116.635
+margin_right = 261.686
+margin_bottom = 150.635
+custom_fonts/font = SubResource( 6 )
 text = "Play some Sweet Squish!"
 
 [node name="door" type="Area2D" parent="bg"]
 position = Vector2( -411.722, 3.49905 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bg/door"]
+position = Vector2( -48.9868, 73.4801 )
 shape = SubResource( 3 )
 
 [node name="tip" type="Label" parent="bg/door"]
 visible = false
-margin_left = -95.6407
-margin_top = -223.939
-margin_right = 183.359
-margin_bottom = -192.939
-text = "Exit the room, and give up on Sweet Smash.
+margin_left = -79.3118
+margin_top = -185.449
+margin_right = 273.688
+margin_bottom = -101.449
+custom_fonts/font = SubResource( 7 )
+text = "Exit the room
+ and give up on Sweet Squish.
 "
 align = 1
 
@@ -78,4 +120,12 @@ stream = ExtResource( 4 )
 
 [node name="gamewin" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+
+[node name="ins" type="Label" parent="."]
+margin_left = 358.07
+margin_top = 568.013
+margin_right = 940.07
+margin_bottom = 602.013
+custom_fonts/font = SubResource( 8 )
+text = "Click something to perform actions"
 
