@@ -2,9 +2,9 @@
 
 [ext_resource path="res://scripts/SSHome.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/phone.png" type="Texture" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/art/logo.png" type="Texture" id=3]
 [ext_resource path="res://assets/art/playbutton.png" type="Texture" id=4]
-[ext_resource path="res://assets/art/pinksweet.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/exitbutton.png" type="Texture" id=5]
 [ext_resource path="res://assets/sound/ss_bgm.wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/sound/fail.wav" type="AudioStream" id=7]
 
@@ -16,7 +16,7 @@ position = Vector2( 512, 300 )
 texture = ExtResource( 2 )
 
 [node name="SSLogo" type="Sprite" parent="."]
-position = Vector2( 512, 100 )
+position = Vector2( 503.618, 211.365 )
 texture = ExtResource( 3 )
 
 [node name="Button" type="TextureButton" parent="."]
@@ -38,19 +38,19 @@ margin_bottom = 504.043
 text = "Sorry, you are out of tickets."
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 416.387
-margin_top = 185.45
-margin_right = 608.387
-margin_bottom = 216.45
+margin_left = 406.807
+margin_top = 446.499
+margin_right = 614.807
+margin_bottom = 477.499
 text = "One FREE ticket every 6 months!
  (normally $5000)"
 align = 1
 
 [node name="Tickets" type="Label" parent="."]
-margin_left = 619.332
-margin_top = 27.9924
-margin_right = 688.332
-margin_bottom = 41.9924
+margin_left = 471.444
+margin_top = 423.159
+margin_right = 540.444
+margin_bottom = 437.159
 text = "Tickets: 69"
 
 [node name="Close" type="TextureButton" parent="."]
@@ -61,17 +61,17 @@ margin_bottom = 72.6578
 texture_normal = ExtResource( 5 )
 
 [node name="hiscore" type="Label" parent="."]
-margin_left = 608.835
-margin_top = 488.701
-margin_right = 655.835
-margin_bottom = 502.701
+margin_left = 339.403
+margin_top = 503.669
+margin_right = 386.403
+margin_bottom = 517.669
 text = "hiscore"
 
 [node name="myscore" type="Label" parent="."]
-margin_left = 608.835
-margin_top = 529.523
-margin_right = 663.835
-margin_bottom = 543.523
+margin_left = 334.015
+margin_top = 547.485
+margin_right = 389.015
+margin_bottom = 561.485
 text = "myscore"
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
